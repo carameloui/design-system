@@ -2,7 +2,7 @@ import { css, getCssText } from './styles'
 
 export const button = css({
   all: 'unset',
-  backgroundColor: '$alloyOrange',
+  backgroundColor: '$viridianGreen',
 
   variants: {
     size: {

@@ -4,3 +4,5 @@ yarn.lock
 *.log
 *-lock.json
 .cache
+storybook-static
+.turbo
