@@ -1,0 +1,21 @@
+{
+  "name": "@caramelo-ui/tokens",
+  "version": "1.0.0",
+  "description": "caramelo-ui tokens",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "author": "lechenco",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --minify",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "lint": "eslint src/**/*.ts* --fix"
+  },
+  "devDependencies": {
+    "@caramelo-ui/ts-config": "*",
+    "@caramelo-ui/eslint-config": "*",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.4"
+  }
+}
