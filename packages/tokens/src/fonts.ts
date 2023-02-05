@@ -1,5 +1,5 @@
 export const fonts = {
-  default: 'Asap, sans-serif',
-  heading: 'Nunito, sans-serif',
+  heading: 'Asap, sans-serif',
+  default: 'Nunito, sans-serif',
   code: 'monospace',
 }

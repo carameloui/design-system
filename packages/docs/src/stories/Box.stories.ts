@@ -8,7 +8,7 @@ export default {
     color: {
       defaultValue: "default",
       description: "Background color",
-      type: { name: "enum", value: ["default", "paper"] },
+      type: { name: "enum", value: ["default", "paper", "special"] },
     },
   },
 } as Meta<BoxProps>;

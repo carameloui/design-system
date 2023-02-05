@@ -2,11 +2,11 @@ import { css } from "./styles";
 import { createElement } from "./utils";
 
 export interface BoxProps extends HTMLDivElement {
-    color: 'default' | 'paper';
+    color?: 'default' | 'paper';
 }
 
 export const box = css({
-  borderRadius: "$lg",
+  borderRadius: "$md",
   padding: '$4',
   border: 0,
 
@@ -18,6 +18,9 @@ export const box = css({
       paper: {
         backgroundColor: "$paper",
       },
+      special: {
+        backgroundColor: '$middleBlueGreen',
+      }
     },
   },
   defaultVariants: {

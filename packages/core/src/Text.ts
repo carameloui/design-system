@@ -1,60 +1,143 @@
+import { Colors } from "@caramelo-ui/tokens";
 import { css } from "./styles";
 import { createElement } from "./utils";
 
-export interface TextProps extends HTMLDivElement {
-  fontFamily?: "default" | "heading";
-  size?:
-    | "xxs"
-    | "xs"
-    | "sm"
-    | "md"
-    | "lg"
-    | "xl"
-    | "2xl"
-    | "4xl"
-    | "5xl"
-    | "6xl"
-    | "7xl"
-    | "8xl"
-    | "9xl"
-    | undefined;
+export enum TextSizes {
+  xs = 'xs',
+  sm = 'sm',
+  md = 'md',
+  lg = 'lg',
+  xl = 'xl',
+}
+
+export interface TextProps extends HTMLElement {
+  variant?: "default" | "heading" | "caption";
+  size?: TextSizes;
+  color?: Colors;
 }
 
 export const text = css({
+  all: "unset",
   borderRadius: "$lg",
   padding: "$4",
   border: 0,
 
+  fontFamily: "$default",
+
   variants: {
     variant: {
       default: {
-        fontFamily: "$default",
+        lineHeight: "$short",
       },
       heading: {
         fontFamily: "$heading",
+        lineHeight: "$base",
+      },
+      caption: {
+        lineHeight: "$shorter",
       },
     },
     size: {
-      xxs: { fontSize: "$xxs" },
-      xs: { fontSize: "$xs" },
-      sm: { fontSize: "$sm" },
-      md: { fontSize: "$md" },
-      lg: { fontSize: "$lg" },
-      xl: { fontSize: "$xl" },
-      "2xl": { fontSize: "$2xl" },
-      "4xl": { fontSize: "$4xl" },
-      "5xl": { fontSize: "$5xl" },
-      "6xl": { fontSize: "$6xl" },
-      "7xl": { fontSize: "$7xl" },
-      "8xl": { fontSize: "$8xl" },
-      "9xl": { fontSize: "$9xl" },
+      xs: { fontSize: "$md" },
+      sm: { fontSize: "$lg" },
+      md: { fontSize: "$xl" },
+      lg: { fontSize: "$2xl" },
+      xl: { fontSize: "$3xl" },
     },
   },
+  compoundVariants: [
+    {
+      variant: "heading",
+      size: "xl",
+      css: {
+        fontSize: "$6xl",
+        fontWeight: "$bold",
+      },
+    },
+    {
+      variant: "heading",
+      size: "lg",
+      css: {
+        fontSize: "$5xl",
+        fontWeight: "$bold",
+      },
+    },
+    {
+      variant: "heading",
+      size: "md",
+      css: {
+        fontSize: "$4xl",
+        fontWeight: "$semibold",
+      },
+    },
+    {
+      variant: "heading",
+      size: "sm",
+      css: {
+        fontSize: "$3xl",
+        fontWeight: "$semibold",
+      },
+    },
+    {
+      variant: "heading",
+      size: "xs",
+      css: {
+        fontSize: "$2xl",
+        fontWeight: "$semibold",
+      },
+    },
+    {
+      variant: "caption",
+      size: "xl",
+      css: {
+        fontSize: "$lg",
+        fontWeight: "$semibold",
+      },
+    },
+    {
+      variant: "caption",
+      size: "lg",
+      css: {
+        fontSize: "$md",
+        fontWeight: "$semibold",
+      },
+    },
+    {
+      variant: "caption",
+      size: "md",
+      css: {
+        fontSize: "$sm",
+        fontWeight: "$semibold",
+      },
+    },
+    {
+      variant: "caption",
+      size: "sm",
+      css: {
+        fontSize: "$xs",
+        fontWeight: "$semibold",
+      },
+    },
+    {
+      variant: "caption",
+      size: "xs",
+      css: {
+        fontSize: "$xxs",
+        fontWeight: "$semibold",
+      },
+    },
+  ],
   defaultVariants: {
     variant: "default",
     size: "md",
   },
 });
 
-export const createText = (props: TextProps): HTMLDivElement =>
-  createElement("span", text(props), props) as HTMLDivElement;
+export const createText = ({
+  color = Colors.mediumChampagne,
+  ...props
+}: TextProps): HTMLElement =>
+  createElement("span", text({
+    ...props,
+    css: { color },
+  }), props) as HTMLElement;
