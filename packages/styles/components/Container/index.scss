@@ -1,0 +1,41 @@
+@use '../../base/space' as space;
+@use '../../base/breakpoints.scss' as breakpoints;
+.caramelo-ui-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: space.$s-4;
+
+    &.paper {
+        background-color: var(--color-paper-surface);
+    }
+    
+    &.sm {
+        max-width: 400px;
+    }
+    &.md {
+        max-width: 600px;
+    }
+    &.lg {
+        max-width: 1000px;
+    }
+    &.xl {
+        max-width: 1400px;
+    }
+    &.fixed {
+        @media (min-width: breakpoints.$sm) {
+            max-width: breakpoints.$sm;
+        }
+        @media (min-width: breakpoints.$md) {
+            max-width: breakpoints.$md;
+        }
+        @media (min-width: breakpoints.$lg) {
+            max-width: breakpoints.$lg;
+        }
+        @media (min-width: breakpoints.$xl) {
+            max-width: breakpoints.$xl;
+        }
+    }
+}

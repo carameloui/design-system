@@ -1,0 +1,4 @@
+{
+  "extends": "@caramelo-ui/ts-config/react.json",
+  "include": ["./"]
+}

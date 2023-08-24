@@ -1,0 +1,26 @@
+@use '../base/colors';
+
+.carameloui-theme-light {
+    --color-accent-primary: var(--color-blue-saphire-800);
+    --color-accent-secondary: var(--color-gamboge-700);
+    --color-accent-success: var(--color-median-blue-green-700);
+    --color-accent-warning: var(--color-mahogane-600);
+    --color-accent-error: var(--color-ruby-red-500);
+
+    --color-base-surface: var(--color-medium-champagne-200);
+    --color-paper-surface: var(--color-medium-champagne-100);
+    --color-drawer-surface: var(--color-medium-champagne-400);
+    --color-detach-surface: var(--color-medium-champagne-800);
+
+    --color-base-text: var(--color-medium-champagne-950);
+    --color-paper-text: var(--color-medium-champagne-950);
+    --color-drawer-text: var(--color-medium-champagne-950);
+    --color-detach-text: var(--color-medium-champagne-50);
+    --color-accent-text: var(--color-medium-champagne-50);
+
+    --color-base-text-disable: var(--color-medium-champagne-800);
+    --color-paper-text-disable: var(--color-medium-champagne-800);
+    --color-drawer-text-disable: var(--color-medium-champagne-800);
+    --color-detach-text-disable: var(--color-medium-champagne-200);
+    --color-accent-text-disable: var(--color-medium-champagne-100);
+}
