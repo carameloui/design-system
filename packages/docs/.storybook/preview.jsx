@@ -1,4 +1,4 @@
-import '../../styles/theme/light.scss';
+import '../../styles/scss/theme/light.scss';
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {

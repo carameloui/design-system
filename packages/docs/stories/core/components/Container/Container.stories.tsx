@@ -1,5 +1,5 @@
 import { StoryObj } from "@storybook/react";
-import "@caramelo-ui/styles/components/Container/index.scss";
+import "@caramelo-ui/styles/scss/components/Container/index.scss";
 
 export default {
   title: "Core/Layout/Container",

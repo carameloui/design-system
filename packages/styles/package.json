@@ -2,6 +2,12 @@
     "name": "@caramelo-ui/styles",
     "version": "1.0.0",
     "license": "MIT",
-    "private": true
-  }
-  
+    "private": true,
+    "devDependencies": {
+        "sass": "^1.66.1"
+    },
+    "scripts": {
+      "dev": "sass --watch --update --style=expanded scss/index.scss:assets/index.css",
+      "build": "sass --no-source-map --style=compressed scss/index.scss:assets/index.css"
+    }
+}
